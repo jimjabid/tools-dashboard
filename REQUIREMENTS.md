@@ -4,15 +4,15 @@
 Build an internal dashboard application using **Vite + React + Tailwind CSS** to organize and manage team tools that are currently scattered across various Postman collections. The dashboard will provide a user-friendly interface for API interactions, organized by workflows, replacing manual Postman usage with a streamlined web interface.
 
 ## Tech Stack
-- **Frontend Framework**: React 18+
+- **Frontend Framework**: React + with JavaScript
 - **Build Tool**: Vite
 - **Styling**: Tailwind CSS
 - **Additional Libraries**: 
   - React Router for navigation
   - Axios for API calls
   - React Hook Form for form handling
-  - React Query/SWR for data fetching
-  - Zustand/Redux for state management
+  - React Query for data fetching
+  - Redux for state management
 
 ## Core Features
 
@@ -71,7 +71,7 @@ Build an internal dashboard application using **Vite + React + Tailwind CSS** to
 
 #### Request Execution
 - **API Caller**: Execute requests directly from the UI
-- **Environment Selection**: Choose between different environments (dev, staging, prod)
+- **Environment Selection**: Production environment only
 - **Request History**: Track all executed requests with timestamps
 - **Response Handling**: 
   - JSON formatting and syntax highlighting
@@ -140,9 +140,9 @@ Build an internal dashboard application using **Vite + React + Tailwind CSS** to
 ### 8. Security & Configuration
 
 #### Environment Management
-- **Multiple Environments**: Dev, staging, production configurations
+- **Production Environment**: Single production environment configuration
 - **Secret Management**: Secure storage of API keys and sensitive data
-- **Base URL Configuration**: Environment-specific base URLs
+- **Base URL Configuration**: Production-specific base URLs
 
 #### Authentication
 - **API Key Management**: Store and manage API keys securely
@@ -224,8 +224,10 @@ src/
 │   └── import/             # Collection import components
 ├── hooks/                  # Custom React hooks
 ├── utils/                  # Utility functions
-├── stores/                 # State management
-├── types/                  # TypeScript definitions
+├── store/                  # Redux state management
+│   ├── actions/            # Redux actions
+│   ├── reducers/           # Redux reducers
+│   └── selectors/          # Redux selectors
 ├── services/               # API services
 └── styles/                 # Global styles
 ```
@@ -234,7 +236,7 @@ src/
 - **Postman Parser**: Function to parse .json collection files
 - **API Client**: Configurable HTTP client for making requests
 - **Form Generator**: Dynamic form creation based on parameters
-- **Environment Manager**: Handle multiple environment configurations
+- **Environment Manager**: Handle production environment configuration
 - **History Manager**: Track and store request history
 
 ## Success Metrics
@@ -248,4 +250,4 @@ src/
 - **API Documentation**: Auto-generate documentation from collections
 - **Testing Suite**: Automated testing of API endpoints
 - **Analytics**: Usage analytics and performance monitoring
-- **Integration**: Connect with other team tools (Jira, Slack, etc.) 
+- **Integration**: Connect with other team tools (Jira, Slack, etc.)
